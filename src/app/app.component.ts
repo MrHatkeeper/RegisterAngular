@@ -11,11 +11,13 @@ export class AppComponent {
 
   nickname = '';
   password = '';
+  send = false;
 
   constructor(private apiService: NevimJakBySeMelaMenovatService){
   }
 
   addUser(): void {
+    this.send = true;
     this.apiService.createPlayer(this.nickname, this.password).subscribe((data) => {
       console.log(data);
     });
