@@ -19,7 +19,6 @@
     <input id="inputAge" type="number" #ageEl [appMin]="17" [appMax]="100" [(ngModel)]="age" name="age" required>
 
 
-
     <div>
       <button [disabled]="form.invalid" (click)="addUser()" class="w-100 btn btn-lg btn-secondary" type="submit">
         Register
