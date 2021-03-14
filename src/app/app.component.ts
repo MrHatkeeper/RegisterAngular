@@ -12,6 +12,7 @@ export class AppComponent {
   nickname = '';
   password = '';
   send = false;
+  age = 0;
 
   constructor(private apiService: NevimJakBySeMelaMenovatService){
   }

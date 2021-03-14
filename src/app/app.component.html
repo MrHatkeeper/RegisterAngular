@@ -3,7 +3,7 @@
     <h1>Registration</h1>
     <label for="inputNick">Nickname</label>
     <input name="nickname" [(ngModel)]="nickname" type="text" required minlength="3" maxlength="10"
-           #usernameEl="ngModel" id="inputNick" placeholder="Nickname">
+           #usernameEl="ngModel" id="inputNick">
     <div *ngIf="usernameEl.touched">
       <p *ngIf="usernameEl.valid">Jméno je validní POGGGERS</p>
       <p *ngIf="usernameEl.errors?.minlength">Moc krátké jméno lol</p>
@@ -12,8 +12,14 @@
     <br>
 
     <label for="inputPassword">Password</label>
-    <input name="password" [(ngModel)]="password" type="password" id="inputPassword" class="form-control"
-           placeholder="Password">
+    <input name="password" [(ngModel)]="password" type="password" id="inputPassword">
+    <br>
+
+    <label for="inputAge">Age</label>
+    <input id="inputAge" type="number" #ageEl [appMin]="17" [appMax]="100" [(ngModel)]="age" name="age" required>
+
+
+
     <div>
       <button [disabled]="form.invalid" (click)="addUser()" class="w-100 btn btn-lg btn-secondary" type="submit">
         Register
